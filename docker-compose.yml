@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  node:
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/opt/src
+    dns_search:
+      - be
+    command: node ./src/index.js
